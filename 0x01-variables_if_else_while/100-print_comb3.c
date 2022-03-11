@@ -2,32 +2,31 @@
 #include <stdio.h>
 
 /**
- * main - prints combo4
+ * main - the function main use printf to print numbers
  *
  * Return: Always 0 (Sucess)
  */
 int main(void)
 {
-	int c;
-	int d = 49;
-	int u = 50;
+	int i;
+	int a = 0;
+	int j = 49;
 
-	for (c = 48; c <= 55; ++c)
+	for (i = 48; i <= 56; ++i)
 	{
-		for (d = c + 1; d <= 56; ++d)
+		for (; j <= 57; ++j)
 		{
-			for (u = 50; u <= 57; ++u)
+
+			putchar(i);
+			putchar(j);
+			if (i != 56 || j != 57)
 			{
-				putchar(c);
-				putchar(d);
-				putchar(u);
-				if (c != 55 || d != 56 || u != 57)
-				{
-					putchar(44);
-					putchar(32);
-				}
+				putchar(44);
+				putchar(32);
 			}
 		}
+		a++;
+		j = 49 + a;
 	}
 	putchar('\n');
 	return (0);
