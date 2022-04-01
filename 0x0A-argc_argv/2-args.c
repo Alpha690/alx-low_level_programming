@@ -2,16 +2,19 @@
 #include <stdio.h>
 
 /**
- * main - prints name folowed by a new line.
+ * main - prints all arguments received.
  * @argc: type int argument
  * @argv: type char argument of string.
  * Return: none
  */
 int main(int argc, char *argv[])
 {
-	(void) argc;
+	int x;
 
-	printf("%s\n", argv[0]);
+	for (x = 0; x < argc; x++)
+	{
+		printf("%s\n", argv[x]);
+	}
 
 	return (0);
 }
