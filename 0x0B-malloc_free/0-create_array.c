@@ -1,30 +1,51 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-
 /**
- * create_array - Creates an array for the function.
- * @size: is the size of unsigned int array
- * @c: is a character for char.
- *
- * Return: Returns to the array.
-**/
-
+ * create_array - create array of char
+ * @size: array size
+ * @c: storage character
+ * Return: pointer of arr of chars
+*/
 char *create_array(unsigned int size, char c)
 {
-char *array = NULL;
-unsigned int i;
+	char *p;
+	unsigned int i;
 
-if (size == 0)
-return (NULL);
-if (size != 0)
+	if (size == 0)
+		return (NULL);
+
+	p = malloc(sizeof(c) * size);
+
+	if (p == NULL)
+		return (NULL);
+
+	for (i = 0; i < size; i++)
+		p[i] = c;
+
+	return (p);
+}#include <stdlib.h>
+#include "main.h"
+/**
+ * create_array - create array of char
+ * @size: array size
+ * @c: storage character
+ * Return: pointer of arr of chars
+*/
+char *create_array(unsigned int size, char c)
 {
-array = (char *)malloc(size * sizeof(char));
-if (array != NULL)
-{
-for (i = 0; i < size; i++)
-array[i] = c;
-}
-}
-return (array);
+	char *p;
+	unsigned int i;
+
+	if (size == 0)
+		return (NULL);
+
+	p = malloc(sizeof(c) * size);
+
+	if (p == NULL)
+		return (NULL);
+
+	for (i = 0; i < size; i++)
+		p[i] = c;
+
+	return (p);
 }
